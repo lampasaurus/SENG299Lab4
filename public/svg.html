@@ -1,0 +1,27 @@
+<html>
+<head><title>SVG tutorial</title></head>
+
+<script src = "http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type = "text/javascript">
+	$(document).ready(function(){
+		console.log("working");
+		var svgns = "http://www.w3.org/2000/svg";
+		var rect = document.createElementNS(svgns, 'rect');
+		rect.setAttribute('width', 200);
+		rect.setAttribute('height', 200);
+		rect.setAttribute('x', 100);
+		rect.setAttribute('y', 100);
+		
+		rect.style.fill = 'red';
+		$('#svg-container').append(rect);
+		$('#svg-container').children().css('fill', 'yellow')
+	});
+</script>
+
+
+<body>
+	<svg width = "800" height="500" id="svg-container">
+		<rect height="100" width="100" style='fill:blue')/>
+	</svg>
+</body>
+</html>

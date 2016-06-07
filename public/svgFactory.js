@@ -52,15 +52,14 @@ function makeLine(x1, y1, x2, y2, color, stroke) {
 */ 
 function makeRectangle(x, y, w, h, c){
    var rect = document.createElementNS(SVGNameSpace, "rect");
-	rect.setAttribute("x", x);
-	rect.setAttribute("y", y);
-	rect.setAttribute("width", w);
-	rect.setAttribute("height", h);
-	rect.setAttribute("fill", c);
-	
-	rect.style.fill = c||"#000000";
-	rect.style.borderColor=c||"#000000";
-	rect.style.color=c||"#000000";
+	rect.setAttributeNS(null, "x", x);
+	rect.setAttributeNS(null,"y", y);
+	rect.setAttributeNS(null,"width", w);
+	rect.setAttributeNS(null,"height", h);
+	rect.setAttributeNS(null,"fill", c);
+	rect.setAttributeNS(null,"color", c);
+	rect.setAttributeNS(null,"stroke", "black");
+	rect.setAttributeNS(null,"strokeWidth", "5");
 	
    // TODO: Implement me. Checkout docs at: http://www.w3schools.com/svg/svg_rect.asp
 
@@ -79,14 +78,19 @@ function makeRectangle(x, y, w, h, c){
 */
 function makeCircle(x, y, r, c){
 
-   var circ = document.createElementNS(SVGNameSpace, "circle"); 
-	circ.setAttribute("cx", x);
-	circ.setAttribute("cy", y);
-	circ.setAttribute("radius", r);
-	
-	circ.style.color=c||"#000000";
-	circ.style.borderColor=c||"#000000";
-	circ.style.fill=c||"#000000";
+	var circ = document.createElementNS(SVGNameSpace, "circle"); 
+	col = toString(c);
+	circ.setAttributeNS(null,"cx", x);
+	circ.setAttributeNS(null,"cy", y);
+	circ.setAttributeNS(null,"r", r);
+	circ.setAttributeNS(null,"fill", c);
+	circ.setAttributeNS(null,"color", c);
+	circ.setAttributeNS(null,"stroke", "black");
+	circ.setAttributeNS(null,"strokeWidth", "5");
+	//circ.style.strokeWidth = "5";
+	//circ.style.stroke = "black";
+	//circ.style.color = "blue";
+	//circ.style.fill="blue";
     // TODO: Implement me. Checkout docs at: http://www.w3schools.com/svg/svg_circle.asp
 
    return circ;
